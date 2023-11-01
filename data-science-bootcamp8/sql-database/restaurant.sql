@@ -1,5 +1,5 @@
 -- Project: Restaurant in SQL
--- Instuction: Create 5 tables and write at least 3 queries using subquery, with (common table expression), join, and aggregate functions.
+-- To create a database named restaurant.db, including 5 tables and at least 3 queries using subquery, with (common table expression), join, and aggregate functions.
 
 -- To open the database
 .open restaurant.db
