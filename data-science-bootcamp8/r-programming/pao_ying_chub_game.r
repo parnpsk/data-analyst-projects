@@ -1,5 +1,5 @@
 ## Project: Rock-Scissor-Paper Game
-# create vectors, then, assign all choice to numbers
+# create vectors, then, assign all choices to numbers
 choices <- c("Rock", "Scissor", "Paper", "Quit")
 choice_numbers <- c(Rock=1, Scissor=2, Paper=3, Quit=4)
 
