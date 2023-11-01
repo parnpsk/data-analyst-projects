@@ -1,2 +1,2 @@
 # data_analyst_projects
-My projects for data analyst role
+My projects for the data analyst role
