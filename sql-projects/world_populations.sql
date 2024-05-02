@@ -26,16 +26,16 @@ SELECT *
 FROM population_years
 WHERE country = 'Gabon'
 ORDER BY population DESC;
--- the largest population size of Gabon is 1.54526 millions on 2010
+-- The largest population size of Gabon is 1.54526 million on 2010
 
--- What were the 10 lowest population countries in 2005?
+-- What were the 10 lowest-population countries in 2005?
 SELECT *
 FROM population_years
 WHERE year = '2005'
 ORDER BY population ASC
 LIMIT 10;
 
--- What are all the distinct countries with a population of over 100 million in the year 2010?
+-- What are all the distinct countries with a population of over 100 million in 2010?
 SELECT *  -- or SELECT DISTINCT(country)
 FROM population_years
 WHERE year = '2010'
@@ -46,15 +46,15 @@ ORDER BY population DESC;
 SELECT COUNT(DISTINCT(country)) AS country
 FROM population_years
 WHERE country LIKE '%Islands%';
--- There are 9 countries: Cayman Islands, Falkland Islands (Islas Malvinas),Turks and Caicos Islands, Virgin Islands-U.S., Virgin Islands-British, Faroe Islands, Cook Islands, Solomon Islands, U.S. Pacific Islands
+-- There are 9 countries: Cayman Islands, Falkland Islands (Islas Malvinas), Turks and Caicos Islands, Virgin Islands-U.S., Virgin Islands-British, Faroe Islands, Cook Islands, Solomon Islands, U.S. Pacific Islands
 
 -- What is the difference in population between 2000 and 2010 in Indonesia?
 SELECT *
 FROM population_years
 WHERE country = 'Indonesia'
-  AND year IN ('2000' , '2010');
+  AND year IN ('2000', '2010');
 -- SELECT 242.96834 - 214.67661;
--- The difference is 28.29173 millions.
+-- The difference is 28.29173 million.
 
 -- How many entries in the countries table are from Africa?
 SELECT COUNT(DISTINCT(name))
@@ -69,16 +69,16 @@ JOIN countries
   ON pop.country_id = countries.id
 WHERE countries.continent = 'Oceania'
   AND pop.year = '2005';
--- 32.66 millions
+-- 32.66 million
 
--- What is the average population of countries in South America in 2003?
+-- What was the average population of countries in South America in 2003?
 SELECT ROUND(AVG(pop.population),2) AS avg_pop_south_af_2003
 FROM population_years pop
 JOIN countries
   ON pop.country_id = countries.id
 WHERE countries.continent = 'South America'
   AND pop.year = '2003';
--- 25.89 millions
+-- 25.89 million
 
 -- What country had the smallest population in 2007?
 SELECT countries.name,
@@ -87,7 +87,7 @@ FROM population_years pop
 JOIN countries
   ON pop.country_id = countries.id
 WHERE pop.year = '2007'
-  AND pop.population IS NOT NULL   -- the population of Former Serbia and Montenegro has  is null
+  AND pop.population IS NOT NULL   -- the population of Former Serbia and Montenegro is null
 ORDER BY pop.population ASC
 LIMIT 1;
 -- Niue has the smallest population in 2007.
@@ -99,13 +99,13 @@ FROM population_years pop
 JOIN countries
   ON pop.country_id = countries.id
 WHERE countries.name = 'Poland';
--- 38.56 millions
+-- 38.56 million
 
 -- How many countries have the word “The” in their name?
 SELECT COUNT(DISTINCT(name))
 FROM countries
 WHERE name LIKE '%The' 
-  OR name LIKE 'The%';  -- cannot use name LIKE '%The%' as it includes Nethelands
+  OR name LIKE 'The%';  -- cannot use name LIKE '%The%' as it includes Netherlands
 -- There are 2 countries
 -- (option) to check the names
 SELECT name
